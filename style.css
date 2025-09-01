@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0;
+  background: #111;
+  color: #eee;
+}
+
+.site-header {
+  background: #222;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.site-header nav a {
+  color: #ddd;
+  margin-left: 1rem;
+  text-decoration: none;
+  position: relative;
+}
+
+.site-header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0%;
+  background: #0ff;
+  transition: width .3s;
+}
+
+.site-header nav a:hover::after {
+  width: 100%;
+}
+
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.post {
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #333;
+}
+
+.post h2 {
+  margin-bottom: 0.5rem;
+  color: #0ff;
+}
+
+.post .meta {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.site-footer {
+  background: #222;
+  text-align: center;
+  padding: 1rem;
+  color: #aaa;
+  border-top: 1px solid #333;
+}
+
+@media (max-width: 600px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-header nav {
+    margin-top: .5rem;
+  }
+}
