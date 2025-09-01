@@ -1,17 +1,25 @@
+:root {
+  --bg: #0d0d0d;
+  --fg: #eee;
+  --accent: #00bcd4;
+  --card-bg: #1a1a1a;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin: 0;
-  background: #111;
-  color: #eee;
+  line-height: 1.6;
+  background: linear-gradient(135deg, var(--bg), #1b1b1b);
+  color: var(--fg);
 }
 
 .site-header {
-  background: #222;
-  color: #fff;
+  background: linear-gradient(90deg, #111, #1b1b1b);
+  color: var(--fg);
   padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -19,11 +27,20 @@ body {
   box-shadow: 0 2px 5px rgba(0,0,0,0.5);
 }
 
+.site-header nav {
+  display: flex;
+  gap: 1rem;
+}
+
 .site-header nav a {
-  color: #ddd;
-  margin-left: 1rem;
+  color: var(--fg);
   text-decoration: none;
   position: relative;
+  transition: color .3s;
+}
+
+.site-header nav a:hover {
+  color: var(--accent);
 }
 
 .site-header nav a::after {
@@ -33,7 +50,7 @@ body {
   bottom: -4px;
   height: 2px;
   width: 0%;
-  background: #0ff;
+  background: var(--accent);
   transition: width .3s;
 }
 
@@ -49,13 +66,15 @@ body {
 
 .post {
   margin-bottom: 2rem;
-  padding-bottom: 2rem;
-  border-bottom: 1px solid #333;
+  padding: 1.5rem;
+  background: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
 }
 
 .post h2 {
   margin-bottom: 0.5rem;
-  color: #0ff;
+  color: var(--accent);
 }
 
 .post .meta {
@@ -65,10 +84,10 @@ body {
 }
 
 .site-footer {
-  background: #222;
+  background: #111;
   text-align: center;
   padding: 1rem;
-  color: #aaa;
+  color: #777;
   border-top: 1px solid #333;
 }
 
